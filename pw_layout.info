@@ -1,0 +1,17 @@
+name = PackWeb (layout)
+backdrop = 1.x
+
+file = pw_layout.php
+
+regions[header_top] = Header top
+regions[header_bottom] = Header bottom
+regions[above] = Above
+regions[content] = Content
+regions[sidebar_left] = Sidebar left
+regions[sidebar_right] = Sidebar right
+regions[below] = Below
+regions[footer_top] = Footer top
+regions[footer_bottom] = Footer bottom
+
+stylesheets[all][] = css/pw_layout.css
+

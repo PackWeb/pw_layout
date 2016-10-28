@@ -1,0 +1,19 @@
+/**
+ * Setup variables, etc.
+ */
+
+@import "compass";
+@import "susy";
+@import "breakpoint";
+
+// Susy defaults.
+$susy: (
+  container: 1200px,
+  use-custom: (
+    clearfix: true,
+  ),
+);
+
+// Set global box-sizing to border-box.
+@include border-box-sizing(true);
+

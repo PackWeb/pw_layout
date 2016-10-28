@@ -1,0 +1,81 @@
+/**
+ * Custom styles.
+ */
+
+@import "base";
+
+.layout--packweb {
+  .l-inner {
+    @include container();
+  }
+}
+
+@include breakpoint(500px) {
+
+  .layout--packweb {
+    &.sidebar-left.sidebar-right {
+      .l-sidebar-left {
+        @include span(2 at 1);
+      }
+
+      .l-sidebar-right {
+        @include span(2 at 3);
+      }
+    }
+  }
+
+}
+
+@include breakpoint(950px) {
+
+  @include layout(12);
+
+  .layout--packweb {
+    &.sidebar-left {
+      .l-sidebar-left {
+        @include span(3 at 1);
+      }
+
+      .l-content {
+        @include span(9 at 4);
+      }
+    }
+
+    &.sidebar-right {
+      .l-sidebar-right {
+        @include span(3 at 10);
+      }
+
+      .l-content {
+        @include span(9 at 1);
+      }
+    }
+
+    &.sidebar-left.sidebar-right {
+      // Left & right sidebars included again here to override previous
+      // breakpoint.
+      .l-sidebar-left {
+        @include span(3 at 1);
+      }
+
+      .l-sidebar-right {
+        @include span(3 at 10);
+      }
+
+      .l-content {
+        @include span(6 at 4 isolate);
+      }
+    }
+  }
+
+}
+
+// Admin page styles.
+#layout-content-form {
+  .layout--packweb {
+    .l-inner {
+      max-width: none;
+    }
+  }
+}
+
