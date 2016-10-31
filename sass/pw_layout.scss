@@ -6,7 +6,7 @@
 
 .layout--packweb {
   .l-inner {
-    @include container();
+    @include container;
   }
 }
 
