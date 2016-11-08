@@ -66,12 +66,17 @@
 
   <?php if ($content['footer_top'] || $content['footer_bottom']): ?>
     <footer class="l-footer">
-      <div class="l-footer-top">
-        <div class="l-inner"><?php print $content['footer_top']; ?></div>
-      </div>
-      <div class="l-footer-bottom" role="contentinfo">
-        <div class="l-inner"><?php print $content['footer_bottom']; ?></div>
-      </div>
+      <?php if ($content['footer_top']): ?>
+        <div class="l-footer-top">
+          <div class="l-inner"><?php print $content['footer_top']; ?></div>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($content['footer_bottom']): ?>
+        <div class="l-footer-bottom" role="contentinfo">
+          <div class="l-inner"><?php print $content['footer_bottom']; ?></div>
+        </div>
+      <?php endif; ?>
     </footer>
   <?php endif; ?>
 </div>
