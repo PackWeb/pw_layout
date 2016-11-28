@@ -22,16 +22,17 @@ html {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 10px;
 }
 
 @media (min-width: 500px) {
-  /* line 17, ../sass/pw_layout.scss */
+  /* line 19, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left.sidebar-right .l-sidebar-left {
     width: 47.36842%;
     float: left;
     margin-right: 5.26316%;
   }
-  /* line 21, ../sass/pw_layout.scss */
+  /* line 23, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left.sidebar-right .l-sidebar-right {
     width: 47.36842%;
     float: right;
@@ -39,43 +40,43 @@ html {
   }
 }
 @media (min-width: 950px) {
-  /* line 35, ../sass/pw_layout.scss */
+  /* line 37, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left .l-sidebar-left {
     width: 23.72881%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 39, ../sass/pw_layout.scss */
+  /* line 41, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left .l-content {
     width: 74.57627%;
     float: right;
     margin-right: 0;
   }
-  /* line 45, ../sass/pw_layout.scss */
+  /* line 47, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-right .l-sidebar-right {
     width: 23.72881%;
     float: right;
     margin-right: 0;
   }
-  /* line 49, ../sass/pw_layout.scss */
+  /* line 51, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-right .l-content {
     width: 74.57627%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 57, ../sass/pw_layout.scss */
+  /* line 59, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left.sidebar-right .l-sidebar-left {
     width: 23.72881%;
     float: left;
     margin-right: 1.69492%;
   }
-  /* line 61, ../sass/pw_layout.scss */
+  /* line 63, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left.sidebar-right .l-sidebar-right {
     width: 23.72881%;
     float: right;
     margin-right: 0;
   }
-  /* line 65, ../sass/pw_layout.scss */
+  /* line 67, ../sass/pw_layout.scss */
   .layout--packweb.sidebar-left.sidebar-right .l-content {
     width: 49.15254%;
     float: left;
@@ -83,7 +84,13 @@ html {
     margin-right: -100%;
   }
 }
-/* line 76, ../sass/pw_layout.scss */
+@media (min-width: 1250px) {
+  /* line 78, ../sass/pw_layout.scss */
+  .layout--packweb .l-inner {
+    padding: 0;
+  }
+}
+/* line 88, ../sass/pw_layout.scss */
 #layout-content-form .layout--packweb .l-inner {
   max-width: none;
 }
