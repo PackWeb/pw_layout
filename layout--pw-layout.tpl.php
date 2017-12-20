@@ -8,12 +8,17 @@
 <div class="layout--packweb <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <?php if ($content['header_top'] || $content['header_bottom']): ?>
     <header class="l-header" role="banner">
-      <div class="l-header-top">
-        <div class="l-inner"><?php print $content['header_top']; ?></div>
-      </div>
-      <div class="l-header-bottom">
-        <div class="l-inner"><?php print $content['header_bottom']; ?></div>
-      </div>
+      <?php if ($content['header_top']): ?>
+        <div class="l-header-top">
+          <div class="l-inner"><?php print $content['header_top']; ?></div>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($content['header_bottom']): ?>
+        <div class="l-header-bottom">
+          <div class="l-inner"><?php print $content['header_bottom']; ?></div>
+        </div>
+      <?php endif; ?>
     </header>
   <?php endif; ?>
 
