@@ -10,6 +10,14 @@
 
     padding: 0 10px;
   }
+
+  .l-header-bottom {
+    .l-inner {
+      // The Primary Navigation block is usually displayed here, so this allows
+      // the drop-down menu to display properly.
+      overflow: visible;
+    }
+  }
 }
 
 @include breakpoint(500px) {
