@@ -18,6 +18,11 @@
       overflow: visible;
     }
   }
+
+  .l-page-header {
+    // This is needed for contextual links to display properly.
+    position: relative;
+  }
 }
 
 @include breakpoint(500px) {
