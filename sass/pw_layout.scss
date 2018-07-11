@@ -4,102 +4,95 @@
 
 @import "base";
 
-.layout--packweb {
-  .l-inner {
-    @include container;
+.layout--pw-layout {
+  display: grid;
+  // 1200px max-width page with fixed-width sidebars.
+  grid-template-columns: 1fr 250px repeat(2, minmax(0, 350px)) 250px 1fr;
 
-    padding: 0 10px;
+  // All regions.
+  & > * {
+    // Span all inner columns.
+    // (Starts from +/-2 due to extra outside columns for max-width page).
+    grid-column: 2 / -2;
   }
 
-  .l-header-bottom {
-    .l-inner {
-      // The Primary Navigation block is usually displayed here, so this allows
-      // the drop-down menu to display properly.
-      overflow: visible;
+  .l-sidebar-left {
+    grid-column-end: 3;
+    grid-row-start: 4;
+  }
+
+  .l-sidebar-right {
+    grid-column-start: -3;
+    grid-row-start: 4;
+  }
+
+  // Both sidebars.
+  &.sidebar-both {
+    .l-content {
+      grid-column: 3 / -3;
     }
-  }
 
-  .l-page-header {
-    // This is needed for contextual links to display properly.
-    position: relative;
-  }
-}
+    @include breakpoint(1000px) {
+      .l-content {
+        grid-column: 2 / -2;
+      }
 
-@include breakpoint(500px) {
-
-  .layout--packweb {
-    &.sidebar-left.sidebar-right {
       .l-sidebar-left {
-        @include span(2 at 1);
+        grid-column-end: 4;
+        grid-row-start: 5;
       }
 
       .l-sidebar-right {
-        @include span(2 at 3);
+        grid-column-start: -4;
+        grid-row-start: 5;
       }
     }
-  }
 
-}
-
-@include breakpoint(950px) {
-
-  @include layout(12);
-
-  .layout--packweb {
-    &.sidebar-left {
+    @include breakpoint(500px) {
       .l-sidebar-left {
-        @include span(3 at 1);
-      }
-
-      .l-content {
-        @include span(9 at 4);
-      }
-    }
-
-    &.sidebar-right {
-      .l-sidebar-right {
-        @include span(3 at 10);
-      }
-
-      .l-content {
-        @include span(9 at 1);
-      }
-    }
-
-    &.sidebar-left.sidebar-right {
-      // Left & right sidebars included again here to override previous
-      // breakpoint.
-      .l-sidebar-left {
-        @include span(3 at 1);
+        grid-column-end: -2;
       }
 
       .l-sidebar-right {
-        @include span(3 at 10);
+        grid-column-start: 2;
+        grid-row-start: 6;
       }
+    }
+  }
 
+  // Left sidebar.
+  &.sidebar-left {
+    .l-content {
+      grid-column-start: 3;
+    }
+
+    @include breakpoint(750px) {
       .l-content {
-        @include span(6 at 4 isolate);
+        grid-column-start: 2;
+      }
+
+      .l-sidebar-left {
+        grid-column-end: -2;
+        grid-row-start: 5;
       }
     }
   }
 
-}
-
-@include breakpoint(1250px) {
-
-  .layout--packweb {
-    .l-inner {
-      padding: 0;
+  // Right sidebar.
+  &.sidebar-right {
+    .l-content {
+      grid-column-end: -3;
     }
-  }
 
-}
+    @include breakpoint(750px) {
+      .l-content {
+        grid-column-end: -2;
+      }
 
-// Admin page styles.
-#layout-content-form {
-  .layout--packweb {
-    .l-inner {
-      max-width: none;
+      .l-sidebar-right {
+        grid-column-start: 2;
+        grid-row-start: 5;
+      }
     }
   }
 }
