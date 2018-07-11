@@ -95,5 +95,10 @@
       }
     }
   }
+
+  @include breakpoint(500px) {
+    // Allow grid to shrink below 500px.
+    grid-template-columns: 1fr repeat(4, minmax(0, 300px)) 1fr;
+  }
 }
 
