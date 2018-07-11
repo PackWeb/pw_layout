@@ -15,10 +15,10 @@ function template_preprocess_layout__pw_layout(&$variables) {
   if ($left && $right) {
     $variables['classes'][] = 'sidebar-both';
   }
-  elseif ($left && !$right) {
+  elseif ($left) {
     $variables['classes'][] = 'sidebar-left';
   }
-  elseif ($right && !$left) {
+  elseif ($right) {
     $variables['classes'][] = 'sidebar-right';
   }
 }
