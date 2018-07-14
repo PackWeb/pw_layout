@@ -7,9 +7,9 @@
 
 <div class="layout--pw-layout <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
 
-  <div class="skip-link element-invisible element-focusable">
-    <a href="#main-content"><?php print t('Skip to main content'); ?></a>
-  </div>
+  <a href="#main-content" class="skip-link element-focusable">
+    <?php print t('Skip to main content'); ?>
+  </a>
 
   <?php if ($content['header_top']): ?>
     <header class="l-header-top"><div class="l-inner">
