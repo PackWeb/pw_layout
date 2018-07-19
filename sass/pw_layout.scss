@@ -6,8 +6,8 @@
 
 .layout--pw-layout {
   display: grid;
-  // 1200px max-width page with fixed-width sidebars.
-  grid-template-columns: 1fr 250px repeat(2, minmax(0, 350px)) 250px 1fr;
+  // 1200px max-width page with fixed-width sidebars and 15px margins.
+  grid-template-columns: minmax(15px, 1fr) 250px repeat(2, minmax(0, 350px)) 250px minmax(15px, 1fr);
 
   // All regions.
   & > * {
