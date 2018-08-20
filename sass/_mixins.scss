@@ -1,0 +1,18 @@
+/**
+ * Custom Sass mixins.
+ */
+
+// Max-width media query.
+@mixin max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// Min-width media query.
+@mixin min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+

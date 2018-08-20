@@ -2,7 +2,7 @@
  * Custom styles.
  */
 
-@import "base";
+@import "mixins";
 
 .layout--pw-layout {
   display: grid;
@@ -32,7 +32,7 @@
       grid-column: 3 / -3;
     }
 
-    @include breakpoint(1000px) {
+    @include max(1000px) {
       .l-content {
         grid-column: 2 / -2;
       }
@@ -48,7 +48,7 @@
       }
     }
 
-    @include breakpoint(500px) {
+    @include max(500px) {
       .l-sidebar-left {
         grid-column-end: -2;
       }
@@ -66,7 +66,7 @@
       grid-column-start: 3;
     }
 
-    @include breakpoint(750px) {
+    @include max(750px) {
       .l-content {
         grid-column-start: 2;
       }
@@ -84,7 +84,7 @@
       grid-column-end: -3;
     }
 
-    @include breakpoint(750px) {
+    @include max(750px) {
       .l-content {
         grid-column-end: -2;
       }
@@ -96,7 +96,7 @@
     }
   }
 
-  @include breakpoint(500px) {
+  @include max(500px) {
     // Allow grid to shrink below 500px.
     grid-template-columns: 1fr repeat(4, minmax(0, 300px)) 1fr;
   }
