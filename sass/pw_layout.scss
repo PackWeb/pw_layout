@@ -96,7 +96,7 @@
     }
   }
 
-  @include max(530px) {
+  @include max(550px) {
     // Allow grid to shrink below 530px.
     grid-template-columns: minmax(10px, 1fr) repeat(4, minmax(0, 300px)) minmax(10px, 1fr);
   }
