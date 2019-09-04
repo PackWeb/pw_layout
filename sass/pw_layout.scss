@@ -18,12 +18,10 @@
 
   .l-sidebar-left {
     grid-column-end: 3;
-    grid-row-start: 4;
   }
 
   .l-sidebar-right {
     grid-column-start: -3;
-    grid-row-start: 4;
   }
 
   // Both sidebars.
@@ -39,12 +37,10 @@
 
       .l-sidebar-left {
         grid-column-end: 4;
-        grid-row-start: 5;
       }
 
       .l-sidebar-right {
         grid-column-start: -4;
-        grid-row-start: 5;
       }
     }
 
@@ -55,7 +51,6 @@
 
       .l-sidebar-right {
         grid-column-start: 2;
-        grid-row-start: 6;
       }
     }
   }
@@ -73,7 +68,6 @@
 
       .l-sidebar-left {
         grid-column-end: -2;
-        grid-row-start: 5;
       }
     }
   }
@@ -91,7 +85,6 @@
 
       .l-sidebar-right {
         grid-column-start: 2;
-        grid-row-start: 5;
       }
     }
   }
@@ -107,6 +100,44 @@
   .layout--pw-layout {
     .skip-link {
       display: none;
+    }
+
+    .l-content {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .l-sidebar-left,
+    .l-sidebar-right {
+      grid-row-start: 4;
+    }
+
+    @include max(1000px) {
+      .l-content {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .l-sidebar-left {
+        grid-row-start: 5;
+        margin-right: 5px;
+      }
+
+      .l-sidebar-right {
+        grid-row-start: 5;
+        margin-left: 5px;
+      }
+    }
+
+    @include max(500px) {
+      .l-sidebar-left {
+        margin-right: 0;
+      }
+
+      .l-sidebar-right {
+        grid-row-start: 6;
+        margin-left: 0;
+      }
     }
   }
 }
