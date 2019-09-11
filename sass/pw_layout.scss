@@ -5,140 +5,35 @@
 @import "mixins";
 
 .layout--pw-layout {
-  display: grid;
-  // 1200px max-width page with fixed-width sidebars and 15px margins.
-  grid-template-columns: minmax(15px, 1fr) 250px repeat(2, minmax(0, 350px)) 250px minmax(15px, 1fr);
 
-  // All regions.
-  & > * {
-    // Span all inner columns.
-    // (Starts from +/-2 due to extra outside columns for max-width page).
-    grid-column: 2 / -2;
-  }
+  @include min(500px) {
+    .l-main.has-sidebar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
-  .l-sidebar-left {
-    grid-column-end: 3;
-  }
-
-  .l-sidebar-right {
-    grid-column-start: -3;
-  }
-
-  // Both sidebars.
-  &.sidebar-both {
-    .l-content {
-      grid-column: 3 / -3;
-    }
-
-    @include max(1000px) {
       .l-content {
-        grid-column: 2 / -2;
+        flex: 100%;
       }
 
-      .l-sidebar-left {
-        grid-column-end: 4;
-      }
-
+      .l-sidebar-left,
       .l-sidebar-right {
-        grid-column-start: -4;
-      }
-    }
-
-    @include max(500px) {
-      .l-sidebar-left {
-        grid-column-end: -2;
-      }
-
-      .l-sidebar-right {
-        grid-column-start: 2;
+        flex: 0 0 250px;
       }
     }
   }
 
-  // Left sidebar.
-  &.sidebar-left {
-    .l-content {
-      grid-column-start: 3;
-    }
-
-    @include max(750px) {
+  @include min(800px) {
+    .l-main.has-sidebar {
       .l-content {
-        grid-column-start: 2;
+        flex: 300px;
       }
 
       .l-sidebar-left {
-        grid-column-end: -2;
+        order: -1;
       }
     }
   }
 
-  // Right sidebar.
-  &.sidebar-right {
-    .l-content {
-      grid-column-end: -3;
-    }
-
-    @include max(750px) {
-      .l-content {
-        grid-column-end: -2;
-      }
-
-      .l-sidebar-right {
-        grid-column-start: 2;
-      }
-    }
-  }
-
-  @include max(550px) {
-    // Allow grid to shrink below 530px.
-    grid-template-columns: minmax(10px, 1fr) repeat(4, minmax(0, 300px)) minmax(10px, 1fr);
-  }
-}
-
-/*** Admin page ***/
-#layout-content-form {
-  .layout--pw-layout {
-    .skip-link {
-      display: none;
-    }
-
-    .l-content {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-    .l-sidebar-left,
-    .l-sidebar-right {
-      grid-row-start: 4;
-    }
-
-    @include max(1000px) {
-      .l-content {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .l-sidebar-left {
-        grid-row-start: 5;
-        margin-right: 5px;
-      }
-
-      .l-sidebar-right {
-        grid-row-start: 5;
-        margin-left: 5px;
-      }
-    }
-
-    @include max(500px) {
-      .l-sidebar-left {
-        margin-right: 0;
-      }
-
-      .l-sidebar-right {
-        grid-row-start: 6;
-        margin-left: 0;
-      }
-    }
-  }
 }
 
