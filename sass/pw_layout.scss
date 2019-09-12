@@ -5,9 +5,9 @@
 @import "mixins";
 
 .layout--pw-layout {
+  .l-main.has-sidebar {
 
-  @include min(500px) {
-    .l-main.has-sidebar {
+    @include min(500px) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -21,10 +21,8 @@
         flex: 0 0 250px;
       }
     }
-  }
 
-  @include min(800px) {
-    .l-main.has-sidebar {
+    @include min(800px) {
       .l-content {
         flex: 300px;
       }
@@ -33,7 +31,28 @@
         order: -1;
       }
     }
-  }
 
+  }
+}
+
+/*** Admin page ***/
+@include min(500px) {
+  #layout-content-form {
+    .layout--pw-layout {
+
+      .l-sidebar-left {
+        .l-inner {
+          margin-right: 10px;
+        }
+      }
+
+      .l-sidebar-right {
+        .l-inner {
+          margin-left: 10px;
+        }
+      }
+
+    }
+  }
 }
 
