@@ -7,7 +7,9 @@
 
 <div class="layout--pw-layout <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
 
-  <a class="skip-link element-invisible element-focusable" href="#main-content"><?php print t('Skip to main content'); ?></a>
+  <a class="skip-link element-invisible element-focusable" href="#main-content">
+    <?php print t('Skip to main content'); ?>
+  </a>
 
   <?php if ($content['header_top'] || $content['header_bottom']): ?>
     <header class="l-header">
@@ -31,10 +33,34 @@
     </div>
   <?php endif; ?>
 
-  <div class="l-main <?php print implode(' ', $main_classes); ?>">
-    <main class="l-content" id="main-content">
-      <div class="l-inner"><?php print $content['content']; ?></div>
-    </main>
+  <div class="l-wrapper <?php print implode(' ', $wrapper_classes); ?>">
+    <div class="l-main">
+      <div class="l-inner">
+
+        <?php if ($messages): ?>
+          <div class="l-messages"><?php print $messages; ?></div>
+        <?php endif; ?>
+
+        <div class="l-page-title" id="main-content">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1 class="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+        </div>
+
+        <?php if ($tabs): ?>
+          <nav class="tabs"><?php print $tabs; ?></nav>
+        <?php endif; ?>
+
+        <?php print $action_links; ?>
+
+        <main class="l-content" id="main-content">
+          <?php print $content['content']; ?>
+        </main>
+
+      </div>
+    </div>
 
     <?php if ($content['sidebar_left']): ?>
       <div class="l-sidebar-left">

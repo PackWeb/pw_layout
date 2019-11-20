@@ -5,14 +5,14 @@
 @import "mixins";
 
 .layout--pw-layout {
-  .l-main.has-sidebar {
+  .l-wrapper.has-sidebar {
 
     @include min(500px) {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
 
-      .l-content {
+      .l-main {
         flex: 100%;
       }
 
@@ -23,7 +23,7 @@
     }
 
     @include min(800px) {
-      .l-content {
+      .l-main {
         flex: 300px;
       }
 
