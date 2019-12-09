@@ -14,4 +14,3 @@ function template_preprocess_layout__pw_layout(&$variables) {
     $variables['wrapper_classes'][] = 'has-sidebar';
   }
 }
-

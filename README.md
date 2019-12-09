@@ -7,4 +7,3 @@
 It uses the deprecated [Compass](http://compass-style.org/),
 [Susy](https://www.oddbird.net/susy/) and
 [Breakpoint](http://breakpoint-sass.com/).
-
