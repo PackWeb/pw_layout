@@ -41,7 +41,7 @@
           <div class="l-messages"><?php print $messages; ?></div>
         <?php endif; ?>
 
-        <div class="l-page-title" id="main-content">
+        <div class="l-page-title">
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>
             <h1 class="page-title"><?php print $title; ?></h1>
