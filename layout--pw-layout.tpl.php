@@ -41,13 +41,15 @@
           <div class="l-messages"><?php print $messages; ?></div>
         <?php endif; ?>
 
-        <div class="l-page-title">
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?>
-            <h1 class="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-        </div>
+        <?php if ($title_prefix || $title || $title_suffix): ?>
+          <div class="l-page-title">
+            <?php print render($title_prefix); ?>
+            <?php if ($title): ?>
+              <h1 class="page-title"><?php print $title; ?></h1>
+            <?php endif; ?>
+            <?php print render($title_suffix); ?>
+          </div>
+        <?php endif; ?>
 
         <?php if ($tabs): ?>
           <nav class="tabs"><?php print $tabs; ?></nav>
