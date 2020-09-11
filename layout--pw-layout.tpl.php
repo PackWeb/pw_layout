@@ -34,9 +34,9 @@
   <?php endif; ?>
 
   <div class="l-wrapper <?php print implode(' ', $wrapper_classes); ?>">
-    <div class="l-main">
-      <div class="l-inner">
+    <div class="l-inner">
 
+      <div class="l-main">
         <?php if ($messages): ?>
           <div class="l-messages"><?php print $messages; ?></div>
         <?php endif; ?>
@@ -58,21 +58,21 @@
         <main class="l-content" id="main-content">
           <?php print $content['content']; ?>
         </main>
-
       </div>
+
+      <?php if ($content['sidebar_left']): ?>
+        <div class="l-sidebar-left">
+          <?php print $content['sidebar_left']; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($content['sidebar_right']): ?>
+        <div class="l-sidebar-right">
+          <?php print $content['sidebar_right']; ?>
+        </div>
+      <?php endif; ?>
+
     </div>
-
-    <?php if ($content['sidebar_left']): ?>
-      <div class="l-sidebar-left">
-        <div class="l-inner"><?php print $content['sidebar_left']; ?></div>
-      </div>
-    <?php endif; ?>
-
-    <?php if ($content['sidebar_right']): ?>
-      <div class="l-sidebar-right">
-        <div class="l-inner"><?php print $content['sidebar_right']; ?></div>
-      </div>
-    <?php endif; ?>
   </div>
 
   <?php if ($content['below']): ?>

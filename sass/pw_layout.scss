@@ -6,32 +6,34 @@
 
 .layout--pw-layout {
   .l-wrapper.has-sidebar {
+    .l-inner {
 
-    @include min(500px) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      @include min(500px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-      .l-main {
-        flex: 100%;
+        .l-main {
+          flex: 100%;
+        }
+
+        .l-sidebar-left,
+        .l-sidebar-right {
+          flex: 0 0 250px;
+        }
       }
 
-      .l-sidebar-left,
-      .l-sidebar-right {
-        flex: 0 0 250px;
+      @include min(800px) {
+        .l-main {
+          flex: 300px;
+        }
+
+        .l-sidebar-left {
+          order: -1;
+        }
       }
+
     }
-
-    @include min(800px) {
-      .l-main {
-        flex: 300px;
-      }
-
-      .l-sidebar-left {
-        order: -1;
-      }
-    }
-
   }
 }
 
