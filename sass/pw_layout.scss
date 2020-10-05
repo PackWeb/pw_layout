@@ -5,55 +5,80 @@
 @import "mixins";
 
 .layout--pw-layout {
-  .l-wrapper.has-sidebar {
-    .l-inner {
+  .l-wrapper {
 
-      @include min(500px) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    // One sidebar.
+    &.has-sidebar {
+      .l-inner {
+        @include min(801px) {
+          display: flex;
+          justify-content: space-between;
 
-        .l-main {
-          flex: 100%;
-        }
+          .l-main {
+            flex: 1;
+          }
 
-        .l-sidebar-left,
-        .l-sidebar-right {
-          flex: 0 0 250px;
-        }
-      }
+          .l-sidebar-left,
+          .l-sidebar-right {
+            flex: 0 0 250px;
+          }
 
-      @include min(800px) {
-        .l-main {
-          flex: 300px;
-        }
-
-        .l-sidebar-left {
-          order: -1;
+          .l-sidebar-left {
+            order: -1;
+          }
         }
       }
-
     }
+
+    // Two sidebars.
+    &.has-sidebars {
+      .l-inner {
+        @include min(601px) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .l-main {
+            flex: 100%;
+          }
+
+          .l-sidebar-left,
+          .l-sidebar-right {
+            flex: 1;
+          }
+        }
+
+        @include min(1101px) {
+          .l-main {
+            flex: 1;
+          }
+
+          .l-sidebar-left,
+          .l-sidebar-right {
+            flex: 0 0 250px;
+          }
+
+          .l-sidebar-left {
+            order: -1;
+          }
+        }
+      }
+    }
+
   }
 }
 
 /*** Admin page ***/
-@include min(500px) {
+@include min(601px) {
   #layout-content-form {
     .layout--pw-layout {
-
       .l-sidebar-left {
-        .l-inner {
-          margin-right: 10px;
-        }
+        margin-right: 10px;
       }
 
       .l-sidebar-right {
-        .l-inner {
-          margin-left: 10px;
-        }
+        margin-left: 10px;
       }
-
     }
   }
 }

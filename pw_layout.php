@@ -8,9 +8,12 @@
  * Process variables for the PackWeb layout.
  */
 function template_preprocess_layout__pw_layout(&$variables) {
-  // Add class if sidebars are in use.
+  // Add class if sidebar(s) are in use.
   $variables['wrapper_classes'] = array();
-  if ($variables['content']['sidebar_left'] || $variables['content']['sidebar_right']) {
+  if ($variables['content']['sidebar_left'] && $variables['content']['sidebar_right']) {
+    $variables['wrapper_classes'][] = 'has-sidebars';
+  }
+  elseif ($variables['content']['sidebar_left'] || $variables['content']['sidebar_right']) {
     $variables['wrapper_classes'][] = 'has-sidebar';
   }
 }
